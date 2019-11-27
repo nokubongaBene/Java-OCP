@@ -1,0 +1,44 @@
+package topic.pkg2;
+/**
+ *
+ * @author Benedicta
+ */
+class A{
+    public void Display(){
+        System.out.println("hello");
+    }
+    public String name= "me";
+}
+class  D extends A{
+    
+    //@override
+    public void Display(){
+        System.out.println("Hello Babe");
+    }
+}
+public class Topic2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        new Thread(new Runnable()
+        {
+            //@override
+            public void run()
+            {
+                System.out.println("New thread created");
+            }
+        }).start();
+        
+        // lambda expression to create the object 
+        new Thread(()-> 
+       {System.out.println("New thread created");}).start();
+    }
+    
+    A a = new D();
+   // a.Display();
+    a.name;
+    D b = new D();
+    
+}
